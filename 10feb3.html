@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: black;
+        color: white;
+    }
+    h1 {
+        border: 2px solid blue;
+    }
+
+    h1::before {
+        content: "I";
+        background-color: orangered;
+        display: block;
+    }
+
+    h1::after {
+        content: "India";
+        background-color: green;
+        display: block;
+    }
+
+    a {
+        position: relative;
+    }
+
+    a:hover::after {
+        content: attr(data-tool-tip);
+        display: block;
+        background-color: rgb(161, 110, 46);
+        color: white;
+        position: absolute;
+        /* top: 0; */
+        left: 20%;
+        bottom: 100%;
+        white-space: nowrap;
+        /* right: 25%; */
+        padding: 3px 15px;
+        border-radius: 10px;
+        font-size: 0.7em;
+    }
+
+    .container{
+        height: 100vh;
+        border: 2px solid white;
+        /* background-color: black; */
+        padding: 50px;
+        margin-top: 30px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 30px;
+    }
+
+    .container::after{
+        content: '';
+        background: url("img/face2.jfif");
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-size: cover;
+        opacity: 0.4;
+    }
+
+
+    .req::after {
+        content: "*";
+        /* position: absolute; */
+        /* display: none; */
+        /* left: 5px; */
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Love</h1>
+        <p>Lorem ipsum dolor sit <a id="link1" href="" data-tool-tip="go to google">amet consectetur</a> adipisicing
+            elit. Magnam quisquam aut a itaque sint amet et placeat, eum pariatur ea sunt sit <a
+                data-tool-tip="facebook.com" href="">quibusdam quae</a> aspernatur, nostrum minima nam facilis aliquid?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a data-tool-tip="our youtube channel"
+                href="">Tempora, reiciendis?</a> Consequatur libero in ab vitae voluptate dolore corrupti quis,
+            doloribus dolorem sed deserunt enim amet.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <a href=""
+                data-tool-tip="my office address">Voluptates repellat</a> voluptatum debitis perspiciatis, unde quidem
+            ea magnam eius, quos ut, ipsa perferendis ullam quisquam officiis soluta quo nesciunt porro. Sit natus ea
+            non voluptas distinctio laudantium alias aspernatur excepturi quisquam.</p>
+        <form action="">
+            <label for="uName">Name: </label>
+            <input type="text" id="uName">
+            <label class="req" for="uName">email: </label>
+            <input type="email">
+        </form>
+    </div>
+</body>
+
+</html>
